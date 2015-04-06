@@ -23,9 +23,12 @@ public class ThirdPersonNetwork : Photon.MonoBehaviour
 	private Vector3 correctVelocity=Vector3.zero;
 	Vector3 syncVelocity ;
 	Quaternion syncRotation;
+	bool correctStartCondition;
+	bool isTheHost;
 	void Start(){
-		GameObject.Find ("Plane").GetComponent<AudioSource> ().Play ();
-
+	//	GameObject.Find ("Plane").GetComponent<AudioSource> ().Play ();
+		startGame = false;
+	//	Debug.Log("ownerID: "+photonView.ownerId);
 	}
 
     void Awake()
@@ -34,7 +37,7 @@ public class ThirdPersonNetwork : Photon.MonoBehaviour
 		currentViewId = photonView.viewID;
         cameraScript = GetComponent<ThirdPersonCamera>();
    //     controllerScript = GetComponent<ThirdPersonController>();
-		startGame = false;
+
 
          if (photonView.isMine)
         {
@@ -115,6 +118,7 @@ public class ThirdPersonNetwork : Photon.MonoBehaviour
 			stream.SendNext(theRigidbody.velocity);				// user sends the rigidbody’s velocity
 			stream.SendNext(transform.rotation);
 			stream.SendNext(transform.position);
+			stream.SendNext(startGame);
 		}
 		else     												// !stream.isWriting
 		{
@@ -122,7 +126,7 @@ public class ThirdPersonNetwork : Photon.MonoBehaviour
 			 syncVelocity = (Vector3)stream.ReceiveNext();
 			 syncRotation =(Quaternion)stream.ReceiveNext();
 			 correctPlayerPos = (Vector3)stream.ReceiveNext();
-
+			startGame=(bool)stream.ReceiveNext();
 
 			m_SyncTime 				 	= 0f;
 			m_SyncDelay 				= Time.time - m_LastSynchronizationTime;
@@ -153,23 +157,25 @@ public class ThirdPersonNetwork : Photon.MonoBehaviour
 
 		if(photonView.isMine)
 		{
-			if(startGame)
+			if (startGame)
 				MovePlayer();
 		}
 		else
 		{
 			m_SyncTime += Time.deltaTime;
 		//	theRigidbody.position = Vector3.Lerp(m_SyncStartPosition, m_SyncEndPosition, m_SyncTime / m_SyncDelay);
+			if(correctStartCondition){
 			transform.position = Vector3.Lerp(transform.position, correctPlayerPos, Time.deltaTime * 5);
 			theRigidbody.velocity=Vector3.Lerp(theRigidbody.velocity,syncVelocity,Time.deltaTime*5);
 			transform.rotation=Quaternion.Lerp(transform.rotation, syncRotation, Time.deltaTime*5);
+			}
 		}
 
 
 
 		//sound control
 		if (Input.GetKey("1")) {
-			GameObject.Find ("Plane").GetComponent<AudioSource> ().Stop();
+			GameObject.Find ("Plane").GetComponent<AudioSource> ().Play();
 		}
 
     }

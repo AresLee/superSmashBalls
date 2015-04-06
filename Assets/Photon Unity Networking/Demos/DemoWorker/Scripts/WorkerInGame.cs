@@ -50,18 +50,24 @@ public class WorkerInGame : Photon.MonoBehaviour
 
 
 		Debug.Log ("Room playerCount(test from harry):" + PhotonNetwork.room.playerCount);
+
     }
+
+
 
     public void OnGUI()
     {
-        if (GUILayout.Button("Return to Lobby"))
-        {
-            PhotonNetwork.LeaveRoom();  // we will load the menu level when we successfully left the room
-        }
-		if (GUILayout.Button ("Start Game")) {
-			ThirdPersonNetwork.startGame = true;
+		if (GUILayout.Button ("Return to Lobby")) {
+			PhotonNetwork.LeaveRoom ();  // we will load the menu level when we successfully left the room
 		}
-    }
+
+		//	if(photonView.ownerId)
+		if (PhotonNetwork.player == PhotonNetwork.masterClient) {
+			if (GUILayout.Button ("Start Game")) {
+				ThirdPersonNetwork.startGame = true;
+			}
+		}
+	}
 
     public void OnMasterClientSwitched(PhotonPlayer player)
     {
