@@ -196,10 +196,10 @@ public class ThirdPersonNetwork : Photon.MonoBehaviour
 			//count++;
 			//other.gameObject
 			//cellRenderer.materials [0].color = Color.red;
-			
+			Grid.colors[other.gameObject.GetComponent<MeshRenderer>().materials[0].color]--;
 			other.gameObject.GetComponent<MeshRenderer>().materials[0].color=mColor;
 			//			cellRenderer.materials[0].color=Color.red;
-			
+			Grid.colors[mColor]++;
 		}
 		//Destroy(other.gameObject);
 	}

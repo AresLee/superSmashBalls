@@ -6,7 +6,10 @@ using System.Linq;
 using System;
 	 
 public class Grid : MonoBehaviour {
-	public List<Cell> cellList = new List<Cell>();
+	public static List<Cell> cellList = new List<Cell>();
+	public static Dictionary<Color, int> colors = new Dictionary<Color, int>();
+	public List<Color> colour;
+	public List<int> value;
 	public float cellWidth;
 	public Cell cell;
 	// Use this for initialization
@@ -21,10 +24,26 @@ public class Grid : MonoBehaviour {
 				cellList.Add (c);
 			}
 		}
+
+		Grid.colors.Add (Grid.cellList[0].GetComponent<MeshRenderer> ().materials [0].color, 0);
+		Grid.colors.Add (Color.blue, 0);
+		Grid.colors.Add (Color.red, 0);
+		Grid.colors.Add (Color.green, 0);
+		Grid.colors.Add (Color.yellow, 0);
+		Grid.colors.Add (Color.magenta, 0);
+		Grid.colors.Add (Color.cyan, 0);
+		Grid.colors.Add (Color.white, 0);
+		Grid.colors.Add (Color.black, 0);
 	}
 	
 	// Update is called once per frame
 	void Update () {
-	
+		colour = new List<Color> ();
+		value = new List<int> ();
+		foreach(KeyValuePair<Color, int> entry in colors)
+		{
+			colour.Add(entry.Key);
+			value.Add(entry.Value);
+		}
 	}
 }
