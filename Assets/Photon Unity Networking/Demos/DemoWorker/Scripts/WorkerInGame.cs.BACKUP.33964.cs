@@ -50,10 +50,17 @@ public class WorkerInGame : Photon.MonoBehaviour
 
 
 		Debug.Log ("Room playerCount(test from harry):" + PhotonNetwork.room.playerCount);
+
     }
+
+
 
     public void OnGUI()
     {
+<<<<<<< HEAD
+		if (GUILayout.Button ("Return to Lobby")) {
+			PhotonNetwork.LeaveRoom ();  // we will load the menu level when we successfully left the room
+=======
         if (GUILayout.Button("Return to Lobby"))
         {
             PhotonNetwork.LeaveRoom();  // we will load the menu level when we successfully left the room
@@ -62,9 +69,12 @@ public class WorkerInGame : Photon.MonoBehaviour
 			Grid.colors[Color.yellow]=0;
 			Grid.colors[Color.green]=0;
         }
+		if (GUILayout.Button ("Start Game")) {
+			ThirdPersonNetwork.startGame = true;
+>>>>>>> f95dd572b80b57352e820cc00c699dad2e26df36
+		}
 
-
-
+		//	if(photonView.ownerId)
 		if (PhotonNetwork.player == PhotonNetwork.masterClient) {
 			if (GUILayout.Button ("Start Game")) {
 				ThirdPersonNetwork.startGame = true;

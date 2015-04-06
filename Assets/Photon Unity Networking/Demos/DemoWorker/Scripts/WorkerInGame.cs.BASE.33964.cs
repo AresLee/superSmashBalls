@@ -57,20 +57,11 @@ public class WorkerInGame : Photon.MonoBehaviour
         if (GUILayout.Button("Return to Lobby"))
         {
             PhotonNetwork.LeaveRoom();  // we will load the menu level when we successfully left the room
-			Grid.colors[Color.blue]=0;
-			Grid.colors[Color.red]=0;
-			Grid.colors[Color.yellow]=0;
-			Grid.colors[Color.green]=0;
         }
-
-
-
-		if (PhotonNetwork.player == PhotonNetwork.masterClient) {
-			if (GUILayout.Button ("Start Game")) {
-				ThirdPersonNetwork.startGame = true;
-			}
+		if (GUILayout.Button ("Start Game")) {
+			ThirdPersonNetwork.startGame = true;
 		}
-	}
+    }
 
     public void OnMasterClientSwitched(PhotonPlayer player)
     {

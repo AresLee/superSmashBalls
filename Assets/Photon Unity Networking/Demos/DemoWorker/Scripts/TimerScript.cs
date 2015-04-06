@@ -20,6 +20,7 @@ public class TimerScript : MonoBehaviour {
 			TimerScript.timerr = timer;
 			if (timer < 0) {
 				timerText.text = "00.00";
+				ThirdPersonNetwork.startGame = false;
 			} else {
 			
 				timerText.text = timer.ToString ("00.00");
