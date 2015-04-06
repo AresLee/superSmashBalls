@@ -25,6 +25,7 @@ public class ThirdPersonNetwork : Photon.MonoBehaviour
 	Quaternion syncRotation;
 	bool correctStartCondition;
 	bool isTheHost;
+	int timerForReset;
 	void Start(){
 
 		startGame = false;
@@ -175,6 +176,23 @@ public class ThirdPersonNetwork : Photon.MonoBehaviour
 		//sound control
 		if (Input.GetKey("1")) {
 			GameObject.Find ("Plane").GetComponent<AudioSource> ().Play();
+		}
+
+		//get player back to the battle field
+		if (gameObject.transform.position.y<=-20) {
+
+			if (timerForReset<60*2) {
+				timerForReset+=1;
+			}
+			else{
+				transform.position=new Vector3(4.23f,10,6.07f);
+				theRigidbody.velocity=Vector3.zero;
+				theRigidbody.rotation=Quaternion.identity;
+				timerForReset=0;
+			}
+
+
+
 		}
 
     }
