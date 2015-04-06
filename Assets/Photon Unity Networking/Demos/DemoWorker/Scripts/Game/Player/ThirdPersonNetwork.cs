@@ -181,10 +181,7 @@ public class ThirdPersonNetwork : Photon.MonoBehaviour
 		
 		Vector3 movement = new Vector3 (moveHorizontal*2, 4*-9.81f*Time.deltaTime, moveVertical*2);
 		
-		//theRigidbody.velocity = movement * 10;
-
-		theRigidbody.AddForce(movement * 5);
-
+		theRigidbody.velocity = movement * 10;
 	}
 
 
