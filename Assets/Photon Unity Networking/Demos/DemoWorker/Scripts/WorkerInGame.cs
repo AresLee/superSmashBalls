@@ -58,6 +58,9 @@ public class WorkerInGame : Photon.MonoBehaviour
         {
             PhotonNetwork.LeaveRoom();  // we will load the menu level when we successfully left the room
         }
+		if (GUILayout.Button ("Start Game")) {
+			ThirdPersonNetwork.startGame = true;
+		}
     }
 
     public void OnMasterClientSwitched(PhotonPlayer player)
