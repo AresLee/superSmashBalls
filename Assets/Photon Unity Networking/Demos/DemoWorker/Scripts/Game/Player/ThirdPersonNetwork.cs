@@ -177,6 +177,9 @@ public class ThirdPersonNetwork : Photon.MonoBehaviour
 			GameObject.Find ("Plane").GetComponent<AudioSource> ().Play();
 		}
 
+
+		//check win
+
     }
 
 	void MovePlayer()
