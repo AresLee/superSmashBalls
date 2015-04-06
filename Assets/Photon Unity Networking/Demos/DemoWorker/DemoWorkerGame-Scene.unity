@@ -101,6 +101,7 @@ GameObject:
   - 33: {fileID: 19}
   - 64: {fileID: 20}
   - 23: {fileID: 18}
+  - 82: {fileID: 26}
   m_Layer: 0
   m_Name: Plane
   m_TagString: Untagged
@@ -356,6 +357,75 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   timerText: {fileID: 829103512}
   timer: 60
+--- !u!82 &26
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 8}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 0}
+  m_audioClip: {fileID: 8300000, guid: cfe823440cc704285913418b3a0d15fd, type: 3}
+  m_PlayOnAwake: 0
+  m_Volume: 1
+  m_Pitch: 1
+  Loop: 1
+  Mute: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    - time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
 --- !u!114 &27
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -575,7 +645,7 @@ Prefab:
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 45dec3c95b1f64b518cbed551a197421, type: 2}
   m_IsPrefabParent: 0
---- !u!4 &567618715
+--- !u!4 &567618715 stripped
 Transform:
   m_PrefabParentObject: {fileID: 468668, guid: 011b1320d90fd4c5c97b1dcc0992392e, type: 2}
   m_PrefabInternal: {fileID: 295715490}
@@ -737,12 +807,12 @@ Light:
   m_ShadowRadius: 0
   m_ShadowAngle: 0
   m_AreaSize: {x: 1, y: 1}
---- !u!224 &1127839256
+--- !u!224 &1127839256 stripped
 RectTransform:
   m_PrefabParentObject: {fileID: 22496782, guid: 45dec3c95b1f64b518cbed551a197421,
     type: 2}
   m_PrefabInternal: {fileID: 493037287}
---- !u!114 &1288361963
+--- !u!114 &1288361963 stripped
 MonoBehaviour:
   m_PrefabParentObject: {fileID: 11409608, guid: 45dec3c95b1f64b518cbed551a197421,
     type: 2}
