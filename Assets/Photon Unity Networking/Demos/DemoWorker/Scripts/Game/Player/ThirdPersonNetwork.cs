@@ -16,6 +16,7 @@ public class ThirdPersonNetwork : Photon.MonoBehaviour
     ThirdPersonCamera cameraScript;
    // ThirdPersonController controllerScript;
 	public static int currentViewId;
+	public static bool startGame;
 	private Color mColor;
 	private Vector3 correctPlayerPos = Vector3.zero; //We lerp towards this
 	private Quaternion correctPlayerRot = Quaternion.identity; //We lerp towards this
@@ -33,6 +34,7 @@ public class ThirdPersonNetwork : Photon.MonoBehaviour
 		currentViewId = photonView.viewID;
         cameraScript = GetComponent<ThirdPersonCamera>();
    //     controllerScript = GetComponent<ThirdPersonController>();
+		startGame = false;
 
          if (photonView.isMine)
         {
@@ -151,7 +153,8 @@ public class ThirdPersonNetwork : Photon.MonoBehaviour
 
 		if(photonView.isMine)
 		{
-			MovePlayer();
+			if(startGame)
+				MovePlayer();
 		}
 		else
 		{
