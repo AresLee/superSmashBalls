@@ -645,7 +645,7 @@ Prefab:
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 45dec3c95b1f64b518cbed551a197421, type: 2}
   m_IsPrefabParent: 0
---- !u!4 &567618715 stripped
+--- !u!4 &567618715
 Transform:
   m_PrefabParentObject: {fileID: 468668, guid: 011b1320d90fd4c5c97b1dcc0992392e, type: 2}
   m_PrefabInternal: {fileID: 295715490}
@@ -807,12 +807,12 @@ Light:
   m_ShadowRadius: 0
   m_ShadowAngle: 0
   m_AreaSize: {x: 1, y: 1}
---- !u!224 &1127839256 stripped
+--- !u!224 &1127839256
 RectTransform:
   m_PrefabParentObject: {fileID: 22496782, guid: 45dec3c95b1f64b518cbed551a197421,
     type: 2}
   m_PrefabInternal: {fileID: 493037287}
---- !u!114 &1288361963 stripped
+--- !u!114 &1288361963
 MonoBehaviour:
   m_PrefabParentObject: {fileID: 11409608, guid: 45dec3c95b1f64b518cbed551a197421,
     type: 2}

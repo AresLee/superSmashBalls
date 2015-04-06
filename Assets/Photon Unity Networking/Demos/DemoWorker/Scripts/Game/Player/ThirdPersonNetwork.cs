@@ -25,7 +25,7 @@ public class ThirdPersonNetwork : Photon.MonoBehaviour
 	Quaternion syncRotation;
 	void Start(){
 		GameObject.Find ("Plane").GetComponent<AudioSource> ().Play ();
-
+		startGame = false;
 	}
 
     void Awake()
@@ -34,7 +34,7 @@ public class ThirdPersonNetwork : Photon.MonoBehaviour
 		currentViewId = photonView.viewID;
         cameraScript = GetComponent<ThirdPersonCamera>();
    //     controllerScript = GetComponent<ThirdPersonController>();
-		startGame = false;
+
 
          if (photonView.isMine)
         {

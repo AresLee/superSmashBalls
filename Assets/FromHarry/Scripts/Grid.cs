@@ -38,12 +38,13 @@ public class Grid : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
+
 		colour = new List<Color> ();
 		value = new List<int> ();
-		foreach(KeyValuePair<Color, int> entry in colors)
-		{
-			colour.Add(entry.Key);
-			value.Add(entry.Value);
+		foreach (KeyValuePair<Color, int> entry in colors) {
+			colour.Add (entry.Key);
+			value.Add (entry.Value);
 		}
+		
 	}
 }
