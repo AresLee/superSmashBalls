@@ -26,7 +26,7 @@ public class ThirdPersonNetwork : Photon.MonoBehaviour
 	bool correctStartCondition;
 	bool isTheHost;
 	void Start(){
-		GameObject.Find ("Plane").GetComponent<AudioSource> ().Play ();
+
 		startGame = false;
 	}
 
