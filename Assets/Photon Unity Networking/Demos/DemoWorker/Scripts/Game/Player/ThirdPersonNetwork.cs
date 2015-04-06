@@ -163,11 +163,11 @@ public class ThirdPersonNetwork : Photon.MonoBehaviour
 		{
 			m_SyncTime += Time.deltaTime;
 		//	theRigidbody.position = Vector3.Lerp(m_SyncStartPosition, m_SyncEndPosition, m_SyncTime / m_SyncDelay);
-			if(correctStartCondition){
+
 			transform.position = Vector3.Lerp(transform.position, correctPlayerPos, Time.deltaTime * 5);
 			theRigidbody.velocity=Vector3.Lerp(theRigidbody.velocity,syncVelocity,Time.deltaTime*5);
 			transform.rotation=Quaternion.Lerp(transform.rotation, syncRotation, Time.deltaTime*5);
-			}
+
 		}
 
 
