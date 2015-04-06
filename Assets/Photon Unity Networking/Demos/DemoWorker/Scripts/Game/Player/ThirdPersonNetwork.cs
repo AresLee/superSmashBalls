@@ -22,6 +22,11 @@ public class ThirdPersonNetwork : Photon.MonoBehaviour
 	private Vector3 correctVelocity=Vector3.zero;
 	Vector3 syncVelocity ;
 	Quaternion syncRotation;
+	void Start(){
+		GameObject.Find ("Plane").GetComponent<AudioSource> ().Play ();
+
+	}
+
     void Awake()
     {
 		theRigidbody = gameObject.GetComponent<Rigidbody> ();
@@ -158,6 +163,11 @@ public class ThirdPersonNetwork : Photon.MonoBehaviour
 		}
 
 
+
+		//sound control
+		if (Input.GetKey("1")) {
+			GameObject.Find ("Plane").GetComponent<AudioSource> ().Stop();
+		}
 
     }
 
