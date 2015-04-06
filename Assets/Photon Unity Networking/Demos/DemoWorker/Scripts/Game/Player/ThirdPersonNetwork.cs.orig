@@ -25,15 +25,10 @@ public class ThirdPersonNetwork : Photon.MonoBehaviour
 	Quaternion syncRotation;
 	bool correctStartCondition;
 	bool isTheHost;
+	int timerForReset;
 	void Start(){
-<<<<<<< HEAD
-	//	GameObject.Find ("Plane").GetComponent<AudioSource> ().Play ();
+
 		startGame = false;
-	//	Debug.Log("ownerID: "+photonView.ownerId);
-=======
-		GameObject.Find ("Plane").GetComponent<AudioSource> ().Play ();
-		startGame = false;
->>>>>>> f95dd572b80b57352e820cc00c699dad2e26df36
 	}
 
     void Awake()
@@ -169,11 +164,11 @@ public class ThirdPersonNetwork : Photon.MonoBehaviour
 		{
 			m_SyncTime += Time.deltaTime;
 		//	theRigidbody.position = Vector3.Lerp(m_SyncStartPosition, m_SyncEndPosition, m_SyncTime / m_SyncDelay);
-			if(correctStartCondition){
+
 			transform.position = Vector3.Lerp(transform.position, correctPlayerPos, Time.deltaTime * 5);
 			theRigidbody.velocity=Vector3.Lerp(theRigidbody.velocity,syncVelocity,Time.deltaTime*5);
 			transform.rotation=Quaternion.Lerp(transform.rotation, syncRotation, Time.deltaTime*5);
-			}
+
 		}
 
 
@@ -182,6 +177,28 @@ public class ThirdPersonNetwork : Photon.MonoBehaviour
 		if (Input.GetKey("1")) {
 			GameObject.Find ("Plane").GetComponent<AudioSource> ().Play();
 		}
+
+<<<<<<< HEAD
+		//get player back to the battle field
+		if (gameObject.transform.position.y<=-20) {
+
+			if (timerForReset<60*2) {
+				timerForReset+=1;
+			}
+			else{
+				transform.position=new Vector3(4.23f,10,6.07f);
+				theRigidbody.velocity=Vector3.zero;
+				theRigidbody.rotation=Quaternion.identity;
+				timerForReset=0;
+			}
+
+
+
+		}
+=======
+
+		//check win
+>>>>>>> d4a99e48f1f62ac31dd09d2587d17992c2da7bae
 
     }
 
