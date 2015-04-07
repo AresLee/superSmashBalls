@@ -29,26 +29,27 @@ public class DisplayColorCounts : MonoBehaviour {
 			}
 		}
 
-		switch (playerNum) {
-		case 1:
-			countText.text = playerNames[0] + " : " + Grid.colors[Color.blue] + " ";
-			countText.color = Color.blue;
-			break;
-		case 2:
-			countText.text = playerNames[1] + " : " + Grid.colors[Color.red] + " ";
-			countText.color = Color.red;
-			break;
-		case 3:
-			countText.text = playerNames[2] + " : " + Grid.colors[Color.green] + " ";
-			countText.color = Color.green;
-			break;
-		case 4:
-			countText.text = playerNames[3] + " : " + Grid.colors[Color.yellow] + " ";
-			countText.color = Color.yellow;
-			break;
+		if (!(TimerScript.timerr < 0)) {
+			switch (playerNum) {
+			case 1:
+				countText.text = playerNames [0] + " : " + Grid.colors [Color.blue] + " ";
+				countText.color = Color.blue;
+				break;
+			case 2:
+				countText.text = playerNames [1] + " : " + Grid.colors [Color.red] + " ";
+				countText.color = Color.red;
+				break;
+			case 3:
+				countText.text = playerNames [2] + " : " + Grid.colors [Color.green] + " ";
+				countText.color = Color.green;
+				break;
+			case 4:
+				countText.text = playerNames [3] + " : " + Grid.colors [Color.yellow] + " ";
+				countText.color = Color.yellow;
+				break;
+			}
+
 		}
-
-
 //		countText.text = "" + Grid.colors[Color.blue] + " ";
 //		
 //		countText.text += "" + Grid.colors[Color.red] + " ";
