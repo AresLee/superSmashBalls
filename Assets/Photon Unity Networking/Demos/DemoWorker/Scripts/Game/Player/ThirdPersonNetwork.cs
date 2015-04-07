@@ -33,6 +33,7 @@ public class ThirdPersonNetwork : Photon.MonoBehaviour
 
     void Awake()
     {
+		Application.targetFrameRate = 60;
 		theRigidbody = gameObject.GetComponent<Rigidbody> ();
 		currentViewId = photonView.viewID;
         cameraScript = GetComponent<ThirdPersonCamera>();
